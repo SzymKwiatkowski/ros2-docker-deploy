@@ -19,14 +19,17 @@ fi
 #     chmod a+r $XAUTH
 # fi
 
-WS_MOUNT=$(dirname $0)/..
+WS_MOUNT="$PWD"; [ "$PWD" = "/" ] && WS_MOUNT=""
 
-docker run -it --rm \
+WS_MOUNT=$WS_MOUNT/../ws
+echo $WS_MOUNT
+
+docker run -it \
 	--name=humble_docker \
 	--privileged \
 	--shm-size=1g \
 	--ulimit memlock=-1 \
-	--mount source=$WS_MOUNT,target=/home/pi/ws,type=bind \
+	--mount source=$WS_MOUNT,target=/home/ros/ws,type=bind \
 	--volume=/dev/bus/usb:/dev/bus/usb \
 	--volume=/dev/ttyUSB0:/dev/ttyUSB0 \
 	-v /dev/shm:/dev/shm \

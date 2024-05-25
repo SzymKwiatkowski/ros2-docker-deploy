@@ -77,8 +77,6 @@ RUN touch /root/.Xauthority
 # [Optional] Set the default user. Omit if you want to keep the default as root.
 USER root
 
-RUN pip install pyserial
-
 WORKDIR /home/$USERNAME/ws
 
 CMD ["/bin/bash"]
