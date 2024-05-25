@@ -19,7 +19,7 @@ fi
 #     chmod a+r $XAUTH
 # fi
 
-WS_MOUNT=$(dirname $0)/..
+WS_MOUNT=/home/orkisz/dockere/ros2-docker-deploy/docker/..
 
 docker run -it --rm \
 	--name=humble_docker \

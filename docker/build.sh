@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t humble_base .
+sudo docker build -t humble_base .
