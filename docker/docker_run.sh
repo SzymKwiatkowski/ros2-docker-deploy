@@ -29,7 +29,7 @@ docker run -it \
 	--privileged \
 	--shm-size=1g \
 	--ulimit memlock=-1 \
-	--mount source=$WS_MOUNT,target=/home/ros/ws,type=bind \
+	--mount source=$WS_MOUNT,target=/home/user/ws,type=bind \
 	--volume=/dev/bus/usb:/dev/bus/usb \
 	--volume=/dev/ttyUSB0:/dev/ttyUSB0 \
 	-v /dev/shm:/dev/shm \
