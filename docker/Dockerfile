@@ -2,7 +2,7 @@ FROM ros:humble
 RUN echo "Europe/Utc" >> /etc/timezone
 # RUN ln -fs /usr/share/zoneinfo/Europe/Rome /etc/localtime
 
-ARG USERNAME=pi
+ARG USERNAME=user
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
@@ -75,9 +75,7 @@ RUN touch /root/.Xauthority
 # ********************************************************
 
 # [Optional] Set the default user. Omit if you want to keep the default as root.
-USER root
-
-RUN pip install pyserial
+USER ${USERNAME}
 
 WORKDIR /home/$USERNAME/ws
 
